@@ -1,0 +1,49 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+}
+#categories {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.item {
+  min-width: 292px;
+  padding: 16px;
+  list-style: none;
+  border-radius: 8px;
+  background-color: #f6f6fe;
+}
+
+.item > h2 {
+  margin: 0 0 16px;
+  color: #2e2f42;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+}
+
+.subcategories {
+  list-style: none;
+  padding: 0;
+}
+
+.subcategories li {
+  margin-bottom: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  color: #2e2f42;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.subcategories li:last-child {
+  margin-bottom: 0;
+}
