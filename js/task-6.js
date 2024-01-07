@@ -10,14 +10,14 @@ const destroyBtn = document.querySelector('[data-destroy]');
 const boxes = document.querySelector('#boxes');
 
 
-createBtn.addEventListener('click', createBoxes);
-destroyBtn.addEventListener('click', destroyBoxes);
-
 function createBoxes() {
   const amount = valueInput.value;
 
   if (amount >= 1 && amount <= 100) {
     const boxItem = Array.from({ length: amount });
+
+    destroyBoxes();
+
     boxes.append(...boxItem.map(createBox));
     valueInput.value = '';
   }
@@ -25,14 +25,17 @@ function createBoxes() {
 
 
 function createBox(_, index) {
-      const box = document.createElement('div');
-      box.style.width = `${20 + (index + 1) * 10}px`;
-      box.style.height = `${20 + (index + 1) * 10}px`;
-      box.style.backgroundColor = getRandomHexColor();
-      return box;
-    }
+  const box = document.createElement('div');
+  box.style.width = `${20 + (index + 1) * 10}px`;
+  box.style.height = `${20 + (index + 1) * 10}px`;
+  box.style.backgroundColor = getRandomHexColor();
+  return box;
+}
 
 function destroyBoxes() {
   boxes.innerHTML = '';
 }
+
+createBtn.addEventListener('click', createBoxes);
+destroyBtn.addEventListener('click', destroyBoxes);
 
