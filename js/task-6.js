@@ -26,9 +26,13 @@ function createBoxes() {
 
 function createBox(_, index) {
   const box = document.createElement('div');
-  box.style.width = `${20 + (index + 1) * 10}px`;
-  box.style.height = `${20 + (index + 1) * 10}px`;
+ 
+  box.style.width = '30px';
+  box.style.height = '30px';
   box.style.backgroundColor = getRandomHexColor();
+
+  box.style.width = `${30 + index * 10}px`;
+  box.style.height = `${30 + index * 10}px`;
   return box;
 }
 

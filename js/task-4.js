@@ -9,15 +9,14 @@ function onFormSubmit(event) {
     const password = form.elements.password.value;
     
     const userData = {
-        email,
-        password,
+        email: email.trim(),
+        password: password.trim(),
     }
 
     const formFields = form.elements;
     for (let i = 0; i < formFields.length; i++) {
-        if (formFields[i].type !== 'submit' && formFields[i].value.trim() === '') {
+        if (formFields[i].type !== 'submit' || formFields[i].value.trim() === '') {
             alert('All form fields must be filled in');
-            event.preventDefault();
             return;
         }
     }
